@@ -23,22 +23,13 @@ $num2=isset ($_POST ['num2'])? ($_POST ['num2']):'';
 $sum= $num1 + $num2;
 
 
-if (strlen($name)>0 && strlen($email)>0 && strlen($feedback)>0 && $sum==10) {
+if (strpos( $email, "@" ) == 0) {
+    print "There was error in a form, please try again.";
 
-    print "<h3>Thank you for giving a feedback!</h3>";
-
+} elseif (strlen($name)>0 && strlen($email)>0 && strlen($feedback)>0 && $sum==10) {
+	print "<h3>Thank you for giving a feedback!</h3>";
 
 } else {
-    print "There was error in a form, please try again";
+    print "There was error in a form, please try again.";
 }
-
-
 ?>
-
-
-
-
-
-
-
-
